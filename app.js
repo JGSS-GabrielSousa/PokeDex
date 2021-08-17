@@ -1,13 +1,18 @@
 const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`
-const NumberofPokemon = 151 //Generation I
+const NumberofPokemons = 386 //Generation I, II and III (Red, Green, Blue, Yellow, Gold, Silver, Crystal, Ruby, Sapphire and Emerald)
 
 
-const generatePokemonPromises = () => Array(NumberofPokemon).fill().map((_, index) =>     
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+const generatePokemonPromises = () => Array(NumberofPokemons).fill().map((_, index) =>     
     fetch(getPokemonUrl(index+1)).then(response => response.json()))
 
 
 const generateHTML = pokemons => pokemons.reduce((accumulator, {name, id, types}) => {
-    const elementTypes = types.map(typeInfo => typeInfo.type.name)
+    const elementTypes = types.map(typeInfo => capitalizeFirstLetter(typeInfo.type.name))
 
     accumulator += `
     <li class="card ${elementTypes[0]}">
