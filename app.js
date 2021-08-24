@@ -1,5 +1,5 @@
 const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`
-const NumberofPokemons = 386 //Generation I, II and III (Red, Green, Blue, Yellow, Gold, Silver, Crystal, Ruby, Sapphire and Emerald)
+const NumberOfPokemon = 386 //Generation I, II and III (Red, Green, Blue, Yellow, Gold, Silver, Crystal, Ruby, Sapphire and Emerald)
 
 
 function capitalizeFirstLetter(string) {
@@ -7,11 +7,11 @@ function capitalizeFirstLetter(string) {
 }
 
 
-const generatePokemonPromises = () => Array(NumberofPokemons).fill().map((_, index) =>     
+const generatePokemonPromises = () => Array(NumberOfPokemon).fill().map((_, index) =>     
     fetch(getPokemonUrl(index+1)).then(response => response.json()))
 
 
-const generateHTML = pokemons => pokemons.reduce((accumulator, {name, id, types}) => {
+const generateHTML = pokemon => pokemon.reduce((accumulator, {name, id, types}) => {
     const elementTypes = types.map(typeInfo => capitalizeFirstLetter(typeInfo.type.name))
 
     accumulator += `
@@ -25,9 +25,9 @@ const generateHTML = pokemons => pokemons.reduce((accumulator, {name, id, types}
 }, '')
 
     
-const insertPokemonsIntoPage = pokemons => {
+const insertPokemonIntoPage = pokemon => {
     const ul = document.querySelector('[data-js="pokedex"]')
-    ul.innerHTML = pokemons
+    ul.innerHTML = pokemon
 }
 
 
@@ -35,4 +35,4 @@ const pokemonPromises = generatePokemonPromises()
 
 Promise.all(pokemonPromises)
     .then(generateHTML)
-    .then(insertPokemonsIntoPage)
+    .then(insertPokemonIntoPage)
