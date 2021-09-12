@@ -19,6 +19,12 @@ h1 {
     text-shadow: 0 2px #222;
 }
 
+
+.loading {
+    display: block;
+    margin: auto;
+}
+
 .pokedex {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
