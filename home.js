@@ -30,6 +30,12 @@ const removeLoadingSpinner = () => {
     spinnerLoading.remove()
 }
 
+function viewPokemon(id){
+    const form = document.querySelector(".view-pokemon-form")
+    const input = document.getElementById("form-value")
+    input.value = id;
+    form.submit();
+}
 
 const pokemonPromises = generatePokemonPromises()
 
