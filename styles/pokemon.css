@@ -1,0 +1,29 @@
+@import url("styles.css");
+
+h1{
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-top: 5px;
+    color: #555;
+    margin-bottom: 0;
+}
+
+.container{
+    text-align: center;
+}
+
+.pokemon-image{
+    border: 2px solid #222;
+    border-radius: 50px;
+}
+
+.back-button{
+    border: 2px solid #222;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 15px;
+    position: absolute;
+    font-size: 20px;
+}
