@@ -3,17 +3,12 @@ const NumberOfPokemon = 386 //Generation I, II and III (Red, Green, Blue, Yellow
 const spinnerLoading = document.querySelector("#loading")
 
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-
 const generatePokemonPromises = () => Array(NumberOfPokemon).fill().map((_, index) =>     
     fetch(getPokemonUrl(index+1)).then(response => response.json()))
 
     
 const generateHTML = pokemon => pokemon.reduce((accumulator, {name, id, types}) => {
-    const elementTypes = types.map(typeInfo => capitalizeFirstLetter(typeInfo.type.name))
+    const elementTypes = types.map(typeInfo => typeInfo.type.name)
 
     accumulator += `
     <li class="card ${elementTypes[0]}">
