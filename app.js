@@ -11,7 +11,6 @@ function capitalizeFirstLetter(string) {
 const generatePokemonPromises = () => Array(NumberOfPokemon).fill().map((_, index) =>     
     fetch(getPokemonUrl(index+1)).then(response => response.json()))
 
-
     
 const generateHTML = pokemon => pokemon.reduce((accumulator, {name, id, types}) => {
     const elementTypes = types.map(typeInfo => capitalizeFirstLetter(typeInfo.type.name))
