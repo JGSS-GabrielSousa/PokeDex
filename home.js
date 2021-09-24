@@ -6,6 +6,7 @@ const NumberOfPokemon = 898
 const NumberOfPokemonToLoad = 40
 let loaded = 0;
 let allLoaded = false;
+let viewingPokemon;
 
 
 const generatePokemonPromises = toLoad => Array(toLoad).fill().map((_, index) =>     
@@ -43,6 +44,9 @@ const insertPokemonIntoPage = pokemon => {
 
 
 function viewPokemon(id){
+    savePageState();
+    viewingPokemon = true;
+
     const form = document.querySelector(".view-pokemon-form");
     const input = document.getElementById("form-value");
     input.value = id;
@@ -51,9 +55,45 @@ function viewPokemon(id){
 
 
 function checkScroll(){
-    if(!allLoaded && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    if(allLoaded == false && (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
         spinnerLoading.style.display = "block";
+        scrollTo(0, (window.innerHeight + window.pageYOffset));
         setTimeout(loadPokemon, 2000);
+    }
+    if(allLoaded){
+        spinnerLoading.style.display = "none";
+        clearInterval(checkScrollInterval);
+    }
+}
+
+
+function savePageState(){
+    sessionStorage.setItem("html", PokeList.innerHTML);
+    sessionStorage.setItem("saved", true);
+    sessionStorage.setItem("scroll", window.pageYOffset);
+    sessionStorage.setItem("loaded", loaded);
+    sessionStorage.setItem("allLoaded", allLoaded);
+}
+
+
+function pageStateUpdate(){
+    if(sessionStorage.getItem("saved") != null){
+        loaded = parseInt(sessionStorage.getItem("loaded"));
+
+        if(sessionStorage.getItem("allLoaded") == "true"){
+            allLoaded = true;
+        }
+        else{
+            allLoaded = false;
+        }
+
+        PokeList.innerHTML = sessionStorage.getItem("html");
+        setTimeout(() => {
+            scrollTo(0, sessionStorage.getItem("scroll"));
+        }, 1000);
+    }
+    else{
+        scrollTo(0, 0);
     }
 }
 
@@ -78,5 +118,12 @@ function loadPokemon(){
     }
 }
 
+pageStateUpdate();
 loadPokemon();
-setInterval(checkScroll, 1000);
+var checkScrollInterval = setInterval(checkScroll, 1000);
+
+window.addEventListener("beforeunload", function(){
+    if(!viewingPokemon){
+        sessionStorage.clear();
+    }
+ }, false);
