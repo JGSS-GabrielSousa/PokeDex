@@ -1,9 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+@font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/font/rubik.woff2") format('woff2');
+}
 
 body {
     background: linear-gradient(to right, #B2B1DE, #F8C9FF);
     color: #f1521a;
-    font-family: rubik;
+    font-family: "Rubik",sans-serif;
     margin: 0;
 }
 
