@@ -1,5 +1,9 @@
 @import url("styles.css");
 
+h2 {
+    color: #222;
+}
+
 .pokedex {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));

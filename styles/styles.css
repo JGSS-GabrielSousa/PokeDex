@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
 
 body {
-    background: linear-gradient(to right, #B2B1DE, #F8C9FF);
-    color: #f1521a;
+    /*background: linear-gradient(to right, #334D8E, #3c5aa6);*/
+    background: #3B4CCA;
+    color: #FFDE00;
     font-family: rubik;
     margin: 0;
 }
@@ -12,20 +13,33 @@ body {
 }
 
 h1 {
+    color: #FFDE00;
     text-align: center;
     font-size: 54px;
-    text-shadow: 0 2px #222;
     margin-top: 0;
     text-transform: capitalize;
+    text-shadow: 2px 0 0 #333, -2px 0 0 #333, 0 2px 0 #333, 0 -2px 0 #333, 2px 2px #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333;
 }
 
 h2 {
+    color: #FFDE00;
     margin-top: 0;
     text-transform: capitalize;
 }
 
+h3 {
+    color: #FFDE00;
+    font-size: 32px;
+    text-shadow: 2px 0 0 #333, -2px 0 0 #333, 0 2px 0 #333, 0 -2px 0 #333, 2px 2px #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333;
+}
+
+h4 {
+    color: #FFDE00;
+    text-shadow: 2px 0 0 #333, -2px 0 0 #333, 0 2px 0 #333, 0 -2px 0 #333, 2px 2px #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333;
+}
+
 p {
-    color: #222;
+    color: #FFD429;
     text-align: center;
     font-size: 18px;
     margin-bottom: 50pt;
@@ -43,7 +57,7 @@ p {
 
 .highlight-on-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0px 0px 5px 3px #777;
+    box-shadow: 0px 0px 5px 3px #333;
 }
 
 
