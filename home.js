@@ -90,10 +90,12 @@ function pageStateUpdate(){
         PokeList.innerHTML = sessionStorage.getItem("html");
         setTimeout(() => {
             scrollTo(0, sessionStorage.getItem("scroll"));
-        }, 1000);
+        }, 500);
     }
     else{
-        scrollTo(0, 0);
+        setTimeout(() => {
+            scrollTo(0, 0);
+        }, 500);
     }
 }
 
