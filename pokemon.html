@@ -11,9 +11,52 @@
 <body>
     <button class="back-button highlight-on-hover" onclick="goBack()">Back</button>
     <div class="container">
-        <img class="pokemon-image"/>
-        <h1>Name</h1>
-        <h2>Types</h2>
+        <div id="photo-and-caption">
+            <h1>Name</h1>
+            <img class="pokemon-image"/>
+            <h2>Types</h2>
+        </div>
+        <div id="data">
+            <h3>Stats</h3>
+            <div id="stats">
+                <div class="stats-bar">
+                    <h4>HP</h4> 
+                    <div class="progress-bar-background">
+                        <div id="hp-bar" class="progress-bar hp"></div>
+                    </div>
+                </div>
+                <div class="stats-bar">
+                    <h4>Atk</h4> 
+                    <div class="progress-bar-background">
+                        <div id="atk-bar" class="progress-bar atk"></div>
+                    </div>
+                </div>
+                <div class="stats-bar">
+                    <h4>Def</h4> 
+                    <div class="progress-bar-background">
+                        <div id="def-bar" class="progress-bar def"></div>
+                    </div>
+                </div>
+                <div class="stats-bar">
+                    <h4>Sp.Atk</h4> 
+                    <div class="progress-bar-background">
+                        <div id="sp-atk-bar" class="progress-bar sp-atk"></div>
+                    </div>
+                </div>
+                <div class="stats-bar">
+                    <h4>Sp.Def</h4> 
+                    <div class="progress-bar-background">
+                        <div id="sp-def-bar" class="progress-bar sp-def"></div>
+                    </div>
+                </div>
+                <div class="stats-bar">
+                    <h4>Speed</h4> 
+                    <div class="progress-bar-background">
+                        <div id="speed-bar" class="progress-bar speed"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

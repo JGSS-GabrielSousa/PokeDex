@@ -37,7 +37,23 @@ function generateHTML(){
     document.querySelector(".pokemon-image").src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${imageID}.png`;
     document.querySelector(".pokemon-image").classList.add(pokemon.types[0].type.name);
 
-    document.querySelector("body").classList.add(pokemon.types[0].type.name);
+    document.querySelector("#hp-bar").innerText = pokemon.stats[0].base_stat;
+    document.querySelector("#hp-bar").style.width = ((pokemon.stats[0].base_stat/255)*100).toString()+"%";
+
+    document.querySelector("#atk-bar").innerText = pokemon.stats[1].base_stat;
+    document.querySelector("#atk-bar").style.width = ((pokemon.stats[1].base_stat/255)*100).toString()+"%";
+
+    document.querySelector("#def-bar").innerText = pokemon.stats[2].base_stat;
+    document.querySelector("#def-bar").style.width = ((pokemon.stats[2].base_stat/255)*100).toString()+"%";
+
+    document.querySelector("#sp-atk-bar").innerText = pokemon.stats[3].base_stat;
+    document.querySelector("#sp-atk-bar").style.width = ((pokemon.stats[3].base_stat/255)*100).toString()+"%";
+
+    document.querySelector("#sp-def-bar").innerText = pokemon.stats[4].base_stat;
+    document.querySelector("#sp-def-bar").style.width = ((pokemon.stats[4].base_stat/255)*100).toString()+"%";
+
+    document.querySelector("#speed-bar").innerText = pokemon.stats[5].base_stat;
+    document.querySelector("#speed-bar").style.width = ((pokemon.stats[5].base_stat/255)*100).toString()+"%";
 }
 
 function goBack(){
