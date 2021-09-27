@@ -111,3 +111,37 @@ a {
 .sp-def {background-color: #6392cc;}
 .speed  {background-color: #bb6dbf;}
 
+#evolution-chain {
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.evo-box {
+    margin: 10px;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.evo-image {
+    border: 1px solid #222;
+    border-radius: 10px;
+    box-shadow: 1px 1px black;
+    background-color: darkgray;
+    margin: 10px;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
