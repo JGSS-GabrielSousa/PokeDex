@@ -22,6 +22,15 @@ h4 {
     margin-bottom: 10px;
 }
 
+p {
+    margin: 0 0;
+    text-shadow: 2px 0 0 #333, -2px 0 0 #333, 0 2px 0 #333, 0 -2px 0 #333, 2px 2px #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333;
+}
+
+a {
+    text-decoration: none;
+}
+
 #stats {
     min-width: 250px;
 }
@@ -95,7 +104,7 @@ h4 {
 }
 
 .xp     {background-color: #1a8d1a;}
-.hp     {background-color: #ff253e;}
+.hp     {background-color: brown;}
 .atk    {background-color: darkgoldenrod;}
 .def    {background-color: orangered;}
 .sp-atk {background-color: #5db9d3;}
