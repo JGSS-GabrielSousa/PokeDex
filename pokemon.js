@@ -1,18 +1,21 @@
 let pokemon;
 const id = getURLParameter("id");
 
-function getURLParameter(parameter){
+
+function getURLParameter(parameter) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(parameter);
 }
 
-async function getPokemonData(){
+
+async function getPokemonData() {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     pokemon = await response.json();
     generateHTML();
 }
 
-function generateHTML(){
+
+function generateHTML() {
     let title = pokemon.name;
     title = title.charAt(0).toUpperCase() + title.slice(1);
     document.querySelector("title").innerHTML = title;
@@ -56,9 +59,11 @@ function generateHTML(){
     document.querySelector("#speed-bar").style.width = ((pokemon.stats[5].base_stat/255)*100).toString()+"%";
 }
 
-function goBack(){
+
+function goBack() {
     location.href = "index.html";
 }
+
 
 getPokemonData()
     .then();
