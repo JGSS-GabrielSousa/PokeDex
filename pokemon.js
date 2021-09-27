@@ -40,6 +40,9 @@ function generateHTML() {
     document.querySelector(".pokemon-image").src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${imageID}.png`;
     document.querySelector(".pokemon-image").classList.add(pokemon.types[0].type.name);
 
+    document.querySelector("#xp-bar").innerText = pokemon.base_experience;
+    document.querySelector("#xp-bar").style.width = ((pokemon.base_experience/255)*100).toString()+"%";
+
     document.querySelector("#hp-bar").innerText = pokemon.stats[0].base_stat;
     document.querySelector("#hp-bar").style.width = ((pokemon.stats[0].base_stat/255)*100).toString()+"%";
 
