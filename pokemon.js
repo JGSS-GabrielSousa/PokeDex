@@ -32,17 +32,22 @@ async function getPokemonData() {
 }
 
 async function getEvolutionChain(id) { 
-    evolutionChain = FullEvolutionChain.data.pokemon_v2_evolutionchain[id-1].pokemon_v2_pokemonspecies;
+    try {
+        evolutionChain = FullEvolutionChain.data.pokemon_v2_evolutionchain[id-1].pokemon_v2_pokemonspecies;
 
-    evolutionChain.sort(function (a, b) {
-        if (a.order > b.order) {
-            return 1;
-        }
-        if (a.order < b.order) {
-            return -1;
-        }
-        return 0;
-    });
+        evolutionChain.sort(function (a, b) {
+            if (a.order > b.order) {
+                return 1;
+            }
+            if (a.order < b.order) {
+                return -1;
+            }
+            return 0;
+        });
+     }
+     catch (e) {
+        ;
+     }
 }
 
 
@@ -72,7 +77,7 @@ function generateHTML() {
     document.querySelector(".pokemon-image").classList.add(pokemon.types[0].type.name);
 
     document.querySelector("#xp-bar").innerText = pokemon.base_experience;
-    document.querySelector("#xp-bar").style.width = ((pokemon.base_experience/255)*100).toString()+"%";
+    document.querySelector("#xp-bar").style.width = ((pokemon.base_experience/608)*100).toString()+"%";
 
     document.querySelector("#hp-bar").innerText = pokemon.stats[0].base_stat;
     document.querySelector("#hp-bar").style.width = ((pokemon.stats[0].base_stat/255)*100).toString()+"%";
