@@ -23,6 +23,7 @@ h4 {
 
 #stats {
     text-align: justify;
+#stats-bar {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -57,7 +58,7 @@ h4 {
     font-size: 20px;
 }
 
-.stats-bar{
+.stats-element{
     margin: 10px;
     text-align: center;
 }
