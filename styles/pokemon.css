@@ -18,12 +18,22 @@ h3 {
 }
 
 h4 {
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 #stats {
-    text-align: justify;
+    min-width: 250px;
+}
+
+#evolution {
+    grid-column-end: 3;
+    grid-column-start: 1;
+    margin-top: 20px;
+}
+
 #stats-bar {
+    text-align: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,17 +41,16 @@ h4 {
 }
 
 #photo-and-caption{
-    margin-bottom: 40px;
+    min-width: max-content;
 }
 
 .container{
     text-align: center;
     padding: 10px 20px;
     margin-bottom: 40px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
 }
 
 .pokemon-image{
@@ -60,7 +69,7 @@ h4 {
 
 .stats-element{
     margin: 10px;
-    text-align: center;
+    min-width: 90px;
 }
 
 .progress-bar-background {
@@ -69,22 +78,27 @@ h4 {
     border: 2px solid #222;
     border-radius: 4px;
     background-color: lightgrey;
-    justify-content: center;
+    position: relative;
+    width: auto;
+    padding: 1px;
 }
 
 .progress-bar {
     width: 50%;
     height: 100%;
-    justify-content: center;    
+    justify-content: center; 
+    border-radius: 2px;   
     text-align: center;
     font-size: 12px;
     color: white;
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 }
 
-.hp     {background-color: red;}
-.atk    {background-color: red;}
-.def    {background-color: red;}
-.sp-atk {background-color: red;}
-.sp-def {background-color: red;}
-.speed  {background-color: red;}
+.xp     {background-color: #1a8d1a;}
+.hp     {background-color: #ff253e;}
+.atk    {background-color: darkgoldenrod;}
+.def    {background-color: orangered;}
+.sp-atk {background-color: #5db9d3;}
+.sp-def {background-color: #6392cc;}
+.speed  {background-color: #bb6dbf;}
+

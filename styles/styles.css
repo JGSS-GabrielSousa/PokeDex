@@ -60,6 +60,23 @@ p {
     box-shadow: 0px 0px 5px 3px #333;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #3B4CCA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5C64A8;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7C7D87;
+}
+
 
 .bug        {background-color: #94BC4A;}
 .dark       {background-color: #736C75;}
