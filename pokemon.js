@@ -34,6 +34,12 @@ async function getPokemonData() {
 async function getEvolutionChain(chainID) {
     try {
         evolutionChain = FullEvolutionChain.evolutionchain[chainID-1].species;
+        const chainCheck = evolutionChain.find(element => element.id == pokemon.id);
+
+        if(chainCheck == undefined){
+            console.log(evolutionChain);
+            evolutionChain = [];
+        }
 
         evolutionChain.sort(function (a, b) {
             if (a.order > b.order) {
@@ -97,27 +103,32 @@ function generateHTML() {
     document.querySelector("#speed-bar").innerText = pokemon.stats[5].base_stat;
     document.querySelector("#speed-bar").style.width = ((pokemon.stats[5].base_stat/255)*100).toString()+"%";
 
-    let accumulator = "";
-    for(let i = 0; i < evolutionChain.length; i++){
-        accumulator += `
-        <div class="evo-box">
-            <a href="pokemon.html?id=${evolutionChain[i].id}">
-            <img class="evo-image" alt="${evolutionChain[i].name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolutionChain[i].id}.png" />
-            <p>${evolutionChain[i].name}</p>
-        `;
-
-        accumulator += `
-            </a>
-        </div>
-        `;
-
-        if(i+1 < evolutionChain.length){
+    if(evolutionChain.length > 0){
+        let accumulator = "";
+        for(let i = 0; i < evolutionChain.length; i++){
             accumulator += `
-                <p><i class="arrow right"></i></p>
+            <div class="evo-box">
+                <a href="pokemon.html?id=${evolutionChain[i].id}">
+                <img class="evo-image" alt="${evolutionChain[i].name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolutionChain[i].id}.png" />
+                <p>${evolutionChain[i].name}</p>
             `;
+
+            accumulator += `
+                </a>
+            </div>
+            `;
+
+            if(i+1 < evolutionChain.length){
+                accumulator += `
+                    <p><i class="arrow right"></i></p>
+                `;
+            }
         }
+        document.querySelector("#evolution-chain").innerHTML = accumulator;
     }
-    document.querySelector("#evolution-chain").innerHTML = accumulator;
+    else{
+        document.querySelector("#evolution").style.display = "none";
+    }
 }
 
 
