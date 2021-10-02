@@ -59,6 +59,11 @@ function checkScroll(){
         spinnerLoading.style.display = "block";
         scrollTo(0, (window.innerHeight + window.pageYOffset));
         setTimeout(loadPokemon, 2000);
+
+        clearInterval(checkScrollInterval);
+        setTimeout( () => {
+            checkScrollInterval = setInterval(checkScroll, 1000);
+        }, 3000);
     }
     if(allLoaded){
         spinnerLoading.style.display = "none";
