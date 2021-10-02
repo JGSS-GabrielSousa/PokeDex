@@ -31,9 +31,9 @@ async function getPokemonData() {
     generateHTML();
 }
 
-async function getEvolutionChain(id) { 
+async function getEvolutionChain(chainID) {
     try {
-        evolutionChain = FullEvolutionChain.data.pokemon_v2_evolutionchain[id-1].pokemon_v2_pokemonspecies;
+        evolutionChain = FullEvolutionChain.evolutionchain[chainID-1].species;
 
         evolutionChain.sort(function (a, b) {
             if (a.order > b.order) {
@@ -44,10 +44,10 @@ async function getEvolutionChain(id) {
             }
             return 0;
         });
-     }
-     catch (e) {
+    }
+    catch (e) {
         ;
-     }
+    }
 }
 
 
