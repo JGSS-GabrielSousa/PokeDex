@@ -18,7 +18,7 @@ h1 {
     font-size: 54px;
     margin-top: 0;
     text-transform: capitalize;
-    text-shadow: 2px 0 0 #333, -2px 0 0 #333, 0 2px 0 #333, 0 -2px 0 #333, 2px 2px #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333;
+    text-shadow: 2px 0 0 #333, -2px 0 0 #333, 0 2px 0 #333, 0 -2px 0 #333, 2px 2px #333, -2px -2px 0 #333, 2px -2px 0 #333, -5px 5px 2px #333;
 }
 
 h2 {
@@ -44,6 +44,11 @@ p {
     font-size: 18px;
     margin-bottom: 50pt;
 }
+
+a { 
+    color: inherit;
+    text-decoration: inherit;
+} 
 
 .loading {
     display: block;

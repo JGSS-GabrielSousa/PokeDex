@@ -31,6 +31,10 @@ a {
     text-decoration: none;
 }
 
+#infos {
+    width: 100%;
+}
+
 #stats {
     min-width: 250px;
 }
@@ -38,7 +42,7 @@ a {
 #evolution {
     grid-column-end: 3;
     grid-column-start: 1;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 #stats-bar {
@@ -55,7 +59,7 @@ a {
 
 .container{
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 50px;
     margin-bottom: 40px;
     display: grid;
     grid-template-columns: auto auto;
@@ -139,9 +143,20 @@ a {
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
-  }
+}
   
-  .right {
+.right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        display: block;
+    }
+    
+    #photo-and-caption{
+        margin-bottom: 40px;
+    }
+}
