@@ -31,9 +31,10 @@ async function getPokemonData() {
     generateHTML();
 }
 
+
 async function getEvolutionChain(chainID) {
     try {
-        evolutionChain = FullEvolutionChain.evolutionchain[chainID-1].species;
+        evolutionChain = FullEvolutionChain.evolution_chain[chainID-1].species;
         const chainCheck = evolutionChain.find(element => element.id == pokemon.id);
 
         if(chainCheck == undefined){

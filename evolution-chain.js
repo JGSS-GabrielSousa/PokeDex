@@ -1,7 +1,7 @@
 // Data extracted from PokeAPI GraphQL
 
 const FullEvolutionChain = {
-  "evolutionchain": [
+  "evolution_chain": [
     {
       "species": [
         {
