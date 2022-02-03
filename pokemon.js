@@ -68,7 +68,7 @@ function generateHTML() {
     document.querySelector(".container h2").innerHTML = `${elementTypes.join(' | ')}`;
 
     document.querySelector(".pokemon-image").alt = pokemon.name;
-    let imageID = pokemon.id+"";
+    let imageID = id;
     switch(imageID.length){
         case 1:
             imageID = "00"+imageID;
@@ -133,7 +133,7 @@ function generateHTML() {
 
 
 function goBack() {
-    location.href = "/";
+    location.href = "index.html";
 }
 
 

@@ -9,35 +9,19 @@ let allLoaded = false;
 let viewingPokemon;
 
 
-accentsTidy = function(s){
-    var r = s.toLowerCase();
-    non_asciis = {'a': '[àáâãäå]', 'ae': 'æ', 'c': 'ç', 'e': '[èéêë]', 'i': '[ìíîï]', 'n': 'ñ', 'o': '[òóôõö]', 'oe': 'œ', 'u': '[ùúûűü]', 'y': '[ýÿ]'};
-    for (i in non_asciis) { r = r.replace(new RegExp(non_asciis[i], 'g'), i); }
-    return r;
-};
-
-
 const generatePokemonPromises = toLoad => Array(toLoad).fill().map((_, index) =>     
     fetch(getPokemonUrl(index+1+loaded)).then(response => response.json()))
     
 
 const generateHTML = pokemon => pokemon.reduce((accumulator, {name, id, types}) => {
     const elementTypes = types.map(typeInfo => typeInfo.type.name)
-    let link;
-
-    if(window.location.href.includes("index"))
-        link = window.location.href.substring(0, window.location.href.length-11) + "/pokemon.html?id=" + accentsTidy(name).replace(/ /g, "+");
-    else
-        link = window.location.href + "pokemon.html?id=" + accentsTidy(name).replace(/ /g, "+");
 
     accumulator += `
-    <a href="${link}" target="_self">
-    <li class="card ${elementTypes[0]} highlight-on-hover" onclick="vviewPokemon('${id}')">
+    <li class="card ${elementTypes[0]} highlight-on-hover" onclick="viewPokemon('${id}')">
         <img class="card-image" alt="${name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" />
         <h2 class="card-title">${id}. ${name}</h2>
         <p class="card-subtitle">${elementTypes.join(' | ')}</p>
     </li>
-    </a>
     `
     return accumulator
 }, '')
