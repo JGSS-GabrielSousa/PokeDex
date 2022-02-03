@@ -133,7 +133,7 @@ function generateHTML() {
 
 
 function goBack() {
-    location.href = "/";
+    location.href = "index.html";
 }
 
 
