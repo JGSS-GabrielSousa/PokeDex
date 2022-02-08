@@ -120,7 +120,7 @@ function generateHTML() {
 
             if(i+1 < evolutionChain.length){
                 accumulator += `
-                    <p><i class="arrow right"></i></p>
+                    <p><i class="arrow"></i></p>
                 `;
             }
         }

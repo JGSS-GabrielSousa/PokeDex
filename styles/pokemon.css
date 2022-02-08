@@ -54,7 +54,7 @@ a {
 }
 
 #photo-and-caption{
-    min-width: max-content;
+    min-width: 100%;
 }
 
 .container{
@@ -143,9 +143,6 @@ a {
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
-}
-  
-.right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
@@ -158,5 +155,16 @@ a {
     
     #photo-and-caption{
         margin-bottom: 40px;
+    }
+    
+    #evolution-chain {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .arrow {
+        transform: rotate(45deg);
     }
 }
