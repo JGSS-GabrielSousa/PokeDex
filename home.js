@@ -32,7 +32,7 @@ const generateHTML = pokemon => pokemon.reduce((accumulator, {name, id, types}) 
 
     accumulator += `
     <a href="${link}" target="_self">
-    <li class="card ${elementTypes[0]} highlight-on-hover" onclick="vviewPokemon('${id}')">
+    <li class="card ${elementTypes[0]} highlight-on-hover" onclick="viewPokemon('${id}')">
         <img class="card-image" alt="${name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" />
         <h2 class="card-title">${id}. ${name}</h2>
         <p class="card-subtitle">${elementTypes.join(' | ')}</p>
@@ -62,11 +62,6 @@ const insertPokemonIntoPage = pokemon => {
 function viewPokemon(id){
     savePageState();
     viewingPokemon = true;
-
-    const form = document.querySelector(".view-pokemon-form");
-    const input = document.getElementById("form-value");
-    input.value = id;
-    form.submit();
 }
 
 
