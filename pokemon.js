@@ -12,7 +12,6 @@ function getURLParameter(parameter) {
 async function getPokemonIDbyName(name) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const poke = await response.json();
-
     return poke.id;
 }
 
