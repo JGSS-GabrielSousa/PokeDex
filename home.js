@@ -66,9 +66,8 @@ function viewPokemon(id){
 
 
 function checkScroll(){
-    if(allLoaded == false && (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+    if(allLoaded == false && (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight-400) {
         spinnerLoading.style.display = "block";
-        scrollTo(0, (window.innerHeight + window.pageYOffset));
         setTimeout(loadPokemon, 2000);
 
         clearInterval(checkScrollInterval);
