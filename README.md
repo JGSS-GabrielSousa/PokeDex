@@ -5,4 +5,4 @@
  https://jgss-gabriel-sousa.github.io/PokeDex/
  
  
-![jgss-gabriel-sousa github io_PokeDex_](https://user-images.githubusercontent.com/42483024/169169860-e59ded02-9f28-4075-b832-99e05b4a45cd.png)
+![image (1)](https://user-images.githubusercontent.com/42483024/169171404-3268f80e-e1e3-4892-a7de-f9e5b39c9318.jpg)
