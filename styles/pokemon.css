@@ -86,25 +86,29 @@ a {
 }
 
 .progress-bar-background {
-    width: 100px;
-    height: 15px;
+    width: 80px;
+    height: 20px;
     border: 2px solid #222;
     border-radius: 4px;
     background-color: lightgrey;
     position: relative;
-    width: auto;
     padding: 1px;
 }
 
 .progress-bar {
-    width: 50%;
-    height: 100%;
+    position: absolute;
+    height: 90%;
     justify-content: center; 
     border-radius: 2px;   
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     color: white;
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+.progress-bar span {
+    position: relative;
+    padding: 32px;
+    vertical-align: middle;
 }
 
 .xp     {background-color: #1a8d1a;}
@@ -127,6 +131,12 @@ a {
     padding: 10px;
     text-transform: capitalize;
 }
+.evo-box:hover {
+    filter: drop-shadow(1px 1px #222);
+    transform: scale(1.2,1.2);
+    image-rendering: pixelated;
+}
+
 
 .evo-image {
     border: 1px solid #222;
